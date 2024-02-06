@@ -33,7 +33,7 @@
             <div class="section-body">
                 <h2 class="section-title">Advanced Forms</h2>
                 <p class="section-lead">We provide advanced input fields, such as date picker, color picker, and so on.</p>
-                    <form action = "{{route('product.store')}}" method = "POST">
+                    <form action = "{{route('product.store')}}" method = "POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card">
                             <div class="card-header">
@@ -84,7 +84,7 @@
                                             <input type="radio"
                                                 name="category"
                                                 value="food"
-                                                class="selectgroup-input"
+                                                class="selectgroup-input @error('category') is-invalid @enderror"
                                                 checked="">
                                             <span class="selectgroup-button">Food</span>
                                         </label>
@@ -92,17 +92,30 @@
                                             <input type="radio"
                                                 name="category"
                                                 value="drink"
-                                                class="selectgroup-input">
+                                                class="selectgroup-input @error('category') is-invalid @enderror">
                                             <span class="selectgroup-button">Drink</span>
                                         </label>
                                         <label class="selectgroup-item">
                                             <input type="radio"
                                                 name="category"
                                                 value="snack"
-                                                class="selectgroup-input">
+                                                class="selectgroup-input @error('category') is-invalid @enderror">
                                             <span class="selectgroup-button">Snack</span>
                                         </label>
                                     </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Image Product</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class = "form-control  @error('image') is-invalid @enderror" name="image">
+                                    </div>
+                                    @error('image')
+                                        <span clas = "invalid-feedback" role = "alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                    @enderror
+                                 
                                 </div>
                               
                             </div>

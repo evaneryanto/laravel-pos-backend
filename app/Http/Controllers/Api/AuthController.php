@@ -62,14 +62,14 @@ class AuthController extends Controller
         if(!$userLogin)
         {
             return response([
-                'mesaage' => ['These credentials does not match our records']
+                'message' => ['These credentials does not match our records']
             ],404);
         }
 
         if(!Hash::check($request->password, $userLogin->password))
         {
             return response([
-                'mesaage' => ['Password is wrong']
+                'message' => ['Password is wrong']
             ],404);
         }
 

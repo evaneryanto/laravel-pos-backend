@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ProductController extends Controller
 {
@@ -12,7 +15,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::orderBy('id','desc')->get();
+        return response()->json([
+            'success' => true,
+            'message' => 'ist Data Product',
+            'data' => $products
+        ],200);
     }
 
     /**
@@ -20,7 +28,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        return redirect()->route('product.index');
+
     }
 
     /**
