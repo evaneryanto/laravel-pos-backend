@@ -54,7 +54,7 @@
                                         <div class="input-group">
                                             <input type="text"
                                                 class="form-control"
-                                                placeholder="Search" 
+                                                placeholder="Search"
                                                 name = "name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
@@ -68,7 +68,7 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-                                            
+
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
@@ -98,7 +98,7 @@
                                                             </button>
                                                         </form>
                                                     </div>
-                                                    
+
                                                 </td>
                                             </tr>
                                         @endforeach
